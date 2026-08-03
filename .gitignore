@@ -1,5 +1,5 @@
+*.txt
 a.out
 *.o
 *.a
-.DS_STORE
-*.txt
+.DS_Store
