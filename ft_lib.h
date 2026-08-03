@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_guess_number.c                                  :+:      :+:    :+:   */
+/*   ft_lib.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/03 23:41:52 by romasant         ###   ########.fr       */
+/*   Created: 2026/08/03 23:40:12 by romasant          #+#    #+#             */
+/*   Updated: 2026/08/03 23:41:01 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-#include "ft_lib.h"
+#ifndef FT_LIB_H
+# define FT_LIB_H
 
-int main(void)
-{
-    srand(time(NULL));
-    int nombre_random;
-    nombre_random = rand() % 100 + 1;
-    ft_putnbr(nombre_random);
-    return (0);
-}
+void    ft_putnbr(int nb);
+void    ft_putchar(char c);
+
+#endif

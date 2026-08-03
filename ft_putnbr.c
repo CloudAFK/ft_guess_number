@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_guess_number.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/03 23:41:52 by romasant         ###   ########.fr       */
+/*   Created: 2026/08/03 23:35:52 by romasant          #+#    #+#             */
+/*   Updated: 2026/08/03 23:44:53 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
+#include <unistd.h>
 #include "ft_lib.h"
 
-int main(void)
+void    ft_putchar(char c)
 {
-    srand(time(NULL));
-    int nombre_random;
-    nombre_random = rand() % 100 + 1;
-    ft_putnbr(nombre_random);
-    return (0);
+    write(1, &c, 1);
+}
+
+void    ft_putnbr(int nb)
+{
+    if (nb == -2147483647)
+    {
+        write(1, "-2147483647", 12);
+        return ;
+    }
+    if (nb < 0)
+    {
+        ft_putchar('-');
+        nb -= nb;
+    }
+    if (nb >= 1 && nb <= 9)
+        ft_putchar(nb + '0');
+    if (nb >= 10)
+    {
+        ft_putnbr(nb % 10);
+        ft_putchar(nb / 10 + '0');
+    }
 }
