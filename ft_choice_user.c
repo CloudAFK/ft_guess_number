@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_guess_number.c                                  :+:      :+:    :+:   */
+/*   ft_choice_user.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 00:23:28 by romasant         ###   ########.fr       */
+/*   Created: 2026/08/04 00:08:25 by romasant          #+#    #+#             */
+/*   Updated: 2026/08/04 00:21:55 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-#include "ft_lib.h"
-
-int main(void)
+int ft_choice_user(void)
 {
-    srand(time(NULL));
-    int nombre_random;
-    nombre_random = rand() % 100 + 1;
     
-    ft_putnbr(nombre_random);
-    return (0);
 }
