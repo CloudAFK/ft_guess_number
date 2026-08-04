@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 00:08:25 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 14:43:03 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:39:13 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_choice_user(int nb_random, int life, int nb_try)
 	int (i) = 0;
 
 	ft_putstr("Ta proposition : ");
-	while (buff[i] < 0)
+	while (i < 10)
 	{
 		buff[i] = '\0';
 		i++;
@@ -30,13 +30,13 @@ int	ft_choice_user(int nb_random, int life, int nb_try)
 	if (nb_user > nb_random)
 	{
 		ft_putstr("Plus petit ! Il te reste ");
-		ft_putnbr(life);
+		ft_putnbr(life - 1);
 		ft_putstr(" vies.\n");
 	}
     else if (nb_user < nb_random)
 	{
 		ft_putstr("Plus grand ! Il te reste ");
-		ft_putnbr(life);
+		ft_putnbr(life - 1);
 		ft_putstr(" vies.\n");
 	}
 	else

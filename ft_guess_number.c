@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 15:03:06 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:42:50 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,45 @@ int main(void)
 		while (life > 0)
 		{
 			printf("Nombre machine : %d\n", nombre_random);
-		flag_choice = ft_choice_user(nombre_random, life, nb_try);
-		if (flag_choice == 0)
-		{
-			life -= 1;
-			if (life == 0)
-			ft_putstr("Perdu ! Le nombre était ");
-		}
-		else
-		{
-			flag_again = ft_again();
-			if (flag_again == 0)
+			flag_choice = ft_choice_user(nombre_random, life, nb_try);
+			if (flag_choice == 0)
 			{
-				ft_putstr("Au revoir a la prochaine !!\n");
-				break ;
+				life -= 1;
+				if (life == 0)
+				{
+					ft_putstr("Perdu ! Le nombre était ");
+					ft_putnbr(nombre_random);
+					ft_putstr(".\n");
+					flag_again = ft_again();
+					if (flag_again == 0)
+					{
+						ft_putstr("Au revoir a la prochaine !!\n");
+						break ;
+					}
+					else if (flag_again == 1)
+						break ;
+					else if (flag_again != 1)
+					{
+						ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
+						ft_again();
+					}
+				}
 			}
-			else if (flag_again != 1)
+			else
 			{
-				ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
-				ft_again();
-			}
+				flag_again = ft_again();
+				if (flag_again == 0)
+				{
+					ft_putstr("Au revoir a la prochaine !!\n");
+					break ;
+				}
+				else if (flag_again == 1)
+					break ;
+				else if (flag_again != 1)
+				{
+					ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
+					ft_again();
+				}
 		}
 		nb_try++;
 		}

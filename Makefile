@@ -6,7 +6,7 @@
 #    By: romasant <romasant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/03 23:50:11 by romasant          #+#    #+#              #
-#    Updated: 2026/08/04 10:50:27 by romasant         ###   ########.fr        #
+#    Updated: 2026/08/04 15:37:40 by romasant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,5 +25,5 @@ clean:
 	@echo "Aucun .o a supprimer XD"
 fclean:
 	rm -rf $(EXEC)
-re:
-	$(fclean) $(all)
+re: fclean all
+	@echo "rebuild termine"
