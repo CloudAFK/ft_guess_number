@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 00:08:25 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 14:22:55 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:43:03 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_choice_user(int nb_random, int life, int nb_try)
 	while (buff[i] < 0)
 	{
 		buff[i] = '\0';
-		i--;
+		i++;
 	}
 	read(0, buff, 10);
 	nb_user = atoi(buff);
