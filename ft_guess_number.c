@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 15:42:50 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:49:33 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ int main(void)
 		flag_again = 2;
 		nb_try = 1;
 		nombre_random = rand() % 100 + 1;
+		write(1, "\033[H\033[J", 7);
 		ft_putstr("Devine le nombre entre 1 et 100 ! Tu as 10 vies.\n");
 		while (life > 0)
 		{
-			printf("Nombre machine : %d\n", nombre_random);
+			//printf("Nombre machine : %d\n", nombre_random);
 			flag_choice = ft_choice_user(nombre_random, life, nb_try);
 			if (flag_choice == 0)
 			{
@@ -45,6 +46,7 @@ int main(void)
 					flag_again = ft_again();
 					if (flag_again == 0)
 					{
+						write(1, "\033[H\033[J", 7);
 						ft_putstr("Au revoir a la prochaine !!\n");
 						break ;
 					}
@@ -52,6 +54,7 @@ int main(void)
 						break ;
 					else if (flag_again != 1)
 					{
+						write(1, "\033[H\033[J", 7);
 						ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
 						ft_again();
 					}
@@ -62,6 +65,7 @@ int main(void)
 				flag_again = ft_again();
 				if (flag_again == 0)
 				{
+					write(1, "\033[H\033[J", 7);
 					ft_putstr("Au revoir a la prochaine !!\n");
 					break ;
 				}
@@ -69,6 +73,7 @@ int main(void)
 					break ;
 				else if (flag_again != 1)
 				{
+					write(1, "\033[H\033[J", 7);
 					ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
 					ft_again();
 				}
