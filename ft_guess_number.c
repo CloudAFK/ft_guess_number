@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 16:39:19 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 19:22:58 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(void)
 					if (flag_again == 0)
 					{
 						write(1, "\033[H\033[J", 7);
-						ft_putstr("Au revoir a la prochaine !!\n");
+						ft_putstr("Au revoir bye !!\n");
 						break ;
 					}
 					else if (flag_again == 1)
