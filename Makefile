@@ -6,7 +6,7 @@
 #    By: romasant <romasant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/03 23:50:11 by romasant          #+#    #+#              #
-#    Updated: 2026/08/04 09:37:49 by romasant         ###   ########.fr        #
+#    Updated: 2026/08/04 10:50:27 by romasant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ EXEC= ./a.out
 	all clean fclean re
 
 all:
-	$(CC) $(CFLAGS) $(FILES_C) -o $(EXEC)
+	clear && $(CC) $(CFLAGS) $(FILES_C) -o $(EXEC)
 
 clean:
 	@echo "Aucun .o a supprimer XD"

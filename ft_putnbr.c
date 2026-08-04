@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:35:52 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/03 23:44:53 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:14:28 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void    ft_putnbr(int nb)
         ft_putchar(nb + '0');
     if (nb >= 10)
     {
-        ft_putnbr(nb % 10);
-        ft_putchar(nb / 10 + '0');
+        ft_putnbr(nb / 10);
+        ft_putchar(nb % 10 + '0');
     }
 }

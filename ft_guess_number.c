@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 09:43:56 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:11:18 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,21 @@ int main(void)
     srand(time(NULL));
     int nombre_random;
     int (life) = 10;
-    int (check_life) = 0;
-    int (nb_try) = 0;
+    int (check_life) = 1;
+    int (nb_try) = 1;
     
     nombre_random = rand() % 100 + 1;
     ft_putstr("Devine le nombre entre 1 et 100 ! Tu as 10 vies.\n");
-	check_life = ft_choice_user(nombre_random);
-	while ()
+	while (nb_try != 10)
 	{
+		//printf("Nombre machine : %d\n", nombre_random);
+		check_life = ft_choice_user(nombre_random, life, nb_try);
 		if (check_life == 0)
-		{
 			life -= 1;
-		}
-		else
-		{
-			ft_putstr("Bravo, trouvé en ");
-			ft_putnbr(nb_try);
-			ft_putstr("essais !\n");
-		}
+		nb_try++;
 	}
+	ft_putnbr(nombre_random);
+	ft_putchar('\n');
 	ft_putnbr(life);
     return (0);
 }

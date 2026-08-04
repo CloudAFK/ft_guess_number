@@ -6,28 +6,39 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 00:08:25 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 09:36:00 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:14:43 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_lib.h"
 
-int	ft_verif_nb(int nb_random, int nb_user)
-{
-	int	(life) = 1;
-	if (nb_random != nb_user)
-		life = 0;
-	return (life);
-}
-
-int	ft_choice_user(int nb_random)
+int	ft_choice_user(int nb_random, int life, int nb_try)
 {
 	char	buff[10];
-	int	(nb_user);
+	int	(nb_user) = 0;
 	int	(check_life) = 0;
 
+	ft_putstr("Ta proposition : ");
 	read(0, buff, 10);
 	nb_user = atoi(buff);
-	check_life = ft_verif_nb(nb_random, nb_user);
+	if (nb_user > nb_random)
+	{
+		ft_putstr("Plus grand ! Il te reste ");
+		ft_putnbr(life);
+		ft_putstr(" vies.\n");
+	}
+    else if (nb_user < nb_random)
+	{
+		ft_putstr("Plus petit ! Il te reste ");
+		ft_putnbr(life);
+		ft_putstr(" vies.\n");
+	}
+	else
+	{
+		ft_putstr("Bravo, trouvé en ");
+		ft_putnbr(nb_try);
+		ft_putstr(" essais !\n");
+		check_life = 1;
+	}
 	return (check_life);
 }

@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:40:12 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 09:39:33 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:11:26 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 void    ft_putnbr(int nb);
 void    ft_putstr(char *str);
 void    ft_putchar(char c);
-int		ft_choice_user(int nb_random);
-int	ft_verif_nb(int nb_random, int nb_user);
+int		ft_choice_user(int nb_random, int life, int nb_try);
 
 #endif
