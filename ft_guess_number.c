@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 15:49:33 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 16:39:19 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main(void)
 					}
 				}
 			}
-			else
+			else if (flag_choice == 1)
 			{
 				flag_again = ft_again();
 				if (flag_again == 0)
@@ -77,8 +77,10 @@ int main(void)
 					ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
 					ft_again();
 				}
-		}
-		nb_try++;
+			}
+			else
+				ft_putstr("Erreur : tu dois mettre que des chiffres\n");
+			nb_try++;
 		}
 	}
 	ft_putchar('\n');
