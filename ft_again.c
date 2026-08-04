@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 12:46:52 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 13:52:59 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:24:46 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_again(void)
     char    buff[2];
 
 	ft_putstr("Rejouer ? (o/n) : ");
-    read(0, buff, 1);
+    read(0, buff, 2);
     if (buff[0] == 'o')
         return (1);
     else if (buff[0] == 'n')

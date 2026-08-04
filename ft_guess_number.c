@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 13:57:16 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:21:13 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,30 @@ int main(void)
     
     nombre_random = rand() % 100 + 1;
     ft_putstr("Devine le nombre entre 1 et 100 ! Tu as 10 vies.\n");
-	while (nb_try != 10)
+	while (life > 0)
 	{
-		//printf("Nombre machine : %d\n", nombre_random);
+		printf("Nombre machine : %d\n", nombre_random);
 		flag_choice = ft_choice_user(nombre_random, life, nb_try);
 		if (flag_choice == 0)
+		{
 			life -= 1;
+			if (life == 0)
+				ft_putstr("Perdu ! Le nombre était ");
+		}
 		else
 		{
-			if (nb_try == 10 || life == 0)
-				ft_putstr("Perdu ! Le nombre était ");
-			else if (flag_choice == 1)
+			flag_again = ft_again();
+			if (flag_again == 1)
+				main();
+			else if (flag_again == 0)
 			{
-				ft_putnbr(nombre_random);
-				ft_putchar('.');
-				flag_again = ft_again();
-				if (flag_again == 1)
-					main();
-				else if (flag_again == 0)
-				{
-					ft_putstr("Au revoir a la prochaine !!\n");
-					break ;
-				}
-				else
-				{
-					ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
-					ft_again();
-				}
+				ft_putstr("Au revoir a la prochaine !!\n");
+				break ;
+			}
+			else
+			{
+				ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
+				ft_again();
 			}
 	}
 		nb_try++;
