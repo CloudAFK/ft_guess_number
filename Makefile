@@ -6,13 +6,13 @@
 #    By: romasant <romasant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/03 23:50:11 by romasant          #+#    #+#              #
-#    Updated: 2026/08/04 00:07:22 by romasant         ###   ########.fr        #
+#    Updated: 2026/08/04 09:37:49 by romasant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=cc
 AR= ar rcs
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -g
 FILES_C= *.c
 EXEC= ./a.out
 .PHONY:

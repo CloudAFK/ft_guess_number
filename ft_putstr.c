@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lib.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/03 23:40:12 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 09:39:33 by romasant         ###   ########.fr       */
+/*   Created: 2026/08/04 08:39:11 by romasant          #+#    #+#             */
+/*   Updated: 2026/08/04 08:40:35 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIB_H
-# define FT_LIB_H
+#include "ft_lib.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-#include <unistd.h>
-
-void    ft_putnbr(int nb);
-void    ft_putstr(char *str);
-void    ft_putchar(char c);
-int		ft_choice_user(int nb_random);
-int	ft_verif_nb(int nb_random, int nb_user);
-
-#endif
+void    ft_putstr(char *str)
+{
+    int (i) = 0;
+    while (str[i])
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
+}
