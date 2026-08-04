@@ -6,7 +6,7 @@
 /*   By: romasant <romasant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 23:11:46 by romasant          #+#    #+#             */
-/*   Updated: 2026/08/04 14:54:09 by romasant         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:03:06 by romasant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int main(void)
     int nombre_random;
     int	life;
     int	flag_choice;
-    int	flag_again;
+    int	(flag_again) = 2;
     int	nb_try;
     
 	while (flag_again != 0)
 	{
 		life = 10;
 		flag_choice = 0;
-		flag_choice = 2;
+		flag_again = 2;
 		nb_try = 1;
 		nombre_random = rand() % 100 + 1;
+		ft_putstr("Devine le nombre entre 1 et 100 ! Tu as 10 vies.\n");
 		while (life > 0)
 		{
-			ft_putstr("Devine le nombre entre 1 et 100 ! Tu as 10 vies.\n");
 			printf("Nombre machine : %d\n", nombre_random);
 		flag_choice = ft_choice_user(nombre_random, life, nb_try);
 		if (flag_choice == 0)
@@ -43,14 +43,12 @@ int main(void)
 		else
 		{
 			flag_again = ft_again();
-			if (flag_again == 1)
-			main();
-			else if (flag_again == 0)
+			if (flag_again == 0)
 			{
 				ft_putstr("Au revoir a la prochaine !!\n");
 				break ;
 			}
-			else
+			else if (flag_again != 1)
 			{
 				ft_putstr("Erreur : Tu dois mettre 'o' ou 'n'\n");
 				ft_again();
