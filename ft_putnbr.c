@@ -20,9 +20,9 @@ void    ft_putchar(char c)
 
 void    ft_putnbr(int nb)
 {
-    if (nb == -2147483647)
+    if (nb == -2147483648)
     {
-        write(1, "-2147483647", 12);
+        write(1, "-2147483648", 12);
         return ;
     }
     if (nb < 0)
